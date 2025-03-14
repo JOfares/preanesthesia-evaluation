@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preanesthesia Evaluation</title>
+    <title>Preoperative Risk Assessment</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -26,61 +26,17 @@
         p {
             line-height: 1.6;
         }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Welcome to Preanesthesia Evaluation</h1>
-    </header>
-    <main>
-        <section>
-            <h2>About the Project</h2>
-            <p>This project is aimed at providing a comprehensive preanesthesia evaluation tool for medical professionals.</p>
-        </section>
-        <section>
-            <h2>Features</h2>
-            <ul>
-                <li>Detailed patient history</li>
-                <li>Risk assessment</li>
-                <li>Customizable evaluation forms</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Contact Us</h2>
-            <p>If you have any questions or feedback, feel free to <a href="mailto:contact@preanesthesia-evaluation.com">contact us</a>.</p>
-        </section>
-    </main>
-</body>
-</html> 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preanesthesia Evaluation</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 1em 0;
-        }
-        main {
+        .card {
+            background: white;
             padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        h1 {
-            color: #333;
+        .card h2 {
+            margin-top: 0;
         }
-        p {
-            line-height: 1.6;
-        }
-        a {
+        .button {
             display: inline-block;
             margin-top: 20px;
             padding: 10px 20px;
@@ -88,37 +44,61 @@
             color: white;
             text-decoration: none;
             border-radius: 5px;
+            cursor: pointer;
         }
-        a:hover {
+        .button:hover {
             background-color: #45a049;
         }
+        .hidden {
+            display: none;
+        }
     </style>
+    <script>
+        function toggleShowMore(id) {
+            var element = document.getElementById(id);
+            if (element.classList.contains('hidden')) {
+                element.classList.remove('hidden');
+                document.getElementById(id + '-button').innerText = "Show Less";
+            } else {
+                element.classList.add('hidden');
+                document.getElementById(id + '-button').innerText = "Show More";
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
-        <h1>Welcome to Preanesthesia Evaluation</h1>
+        <h1>Preoperative Risk Assessment</h1>
     </header>
     <main>
-        <section>
-            <h2>About the Project</h2>
-            <p>This project is aimed at providing a comprehensive preanesthesia evaluation tool for medical professionals.</p>
-        </section>
-        <section>
-            <h2>Features</h2>
+        <div class="card">
+            <h2>Risk Classification</h2>
+            <p>Patients can be classified into risk categories using standardized assessment tools or electronic self-administered questionnaires.</p>
+            <p id="risk-classification-more" class="hidden">Risk assessment tools are divided into risk scores and predictive models developed using multivariate analysis.</p>
+            <div class="button" id="risk-classification-more-button" onclick="toggleShowMore('risk-classification-more')">Show More</div>
+        </div>
+
+        <div class="card">
+            <h2>Comorbidity-Based Risk Assessment</h2>
+            <p>ASA Physical Status Classification (ASA PS) helps in anesthesia planning but does not account for preoperative physiological or functional status.</p>
+            <p>Various indices such as NSQIP, CCI, and RCRI are recommended for cardiovascular risk stratification.</p>
+        </div>
+
+        <div class="card">
+            <h2>Functional Status & Exercise Tolerance</h2>
+            <p>Measured in Metabolic Equivalents (METs). A MET value of 4 or higher suggests lower cardiovascular risk.</p>
+            <p>Cardiopulmonary Exercise Testing (CPET) provides comprehensive functional assessment but requires specialized facilities.</p>
+        </div>
+
+        <div class="card">
+            <h2>Surgical Risk by Procedure</h2>
             <ul>
-                <li>Detailed patient history</li>
-                <li>Risk assessment</li>
-                <li>Customizable evaluation forms</li>
+                <li>Minor surgeries (e.g., cataract) - &lt;1% risk</li>
+                <li>Intermediate surgeries (e.g., ENT, orthopedic) - ~1% risk</li>
+                <li>Major surgeries (e.g., intra-abdominal, neurosurgery) - ≥3% risk</li>
+                <li>High-risk surgeries (e.g., vascular, thoracic, transplant) - ≥5% risk</li>
             </ul>
-        </section>
-        <section>
-            <h2>Contact Us</h2>
-            <p>If you have any questions or feedback, feel free to <a href="mailto:contact@preanesthesia-evaluation.com">contact us</a>.</p>
-        </section>
-        <section>
-            <h2>Additional Tools</h2>
-            <a href="src/pages/preoperative-risk.js">Preoperative Risk Assessment</a>
-        </section>
+        </div>
     </main>
 </body>
 </html>
