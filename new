@@ -50,7 +50,7 @@ export default function PreoperativeRisk() {
               <li>Major surgeries (e.g., intra-abdominal, neurosurgery) - ≥3% risk</li>
               <li>High-risk surgeries (e.g., vascular, thoracic, transplant) - ≥5% risk</li>
             </ul>
-          </CardContent>
+          </Content>
         </Card>
       </main>
     </div>
